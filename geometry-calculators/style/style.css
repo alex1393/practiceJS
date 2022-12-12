@@ -84,6 +84,7 @@ h1 {
   padding: 0.5208333333vw;
   background: transparent;
   color: #fff;
+  margin-bottom: 0.78125vw;
 }
 .shapesWrapper .shape .enterData {
   display: none;
@@ -93,6 +94,7 @@ h1 {
 }
 .shapesWrapper .shape .enterData p {
   font-size: 0.8333333333vw;
+  margin-bottom: 1.0416666667vw;
 }
 .shapesWrapper .shape .result {
   display: none;
@@ -104,6 +106,9 @@ h1 {
   margin-left: 0.5208333333vw;
   font-weight: 600;
 }
+.shapesWrapper .shape .result .reset {
+  margin-top: 0.5208333333vw;
+}
 .shapesWrapper .shape button {
   cursor: pointer;
   outline: none;
@@ -112,7 +117,6 @@ h1 {
   border-radius: 0.2604166667vw;
   color: #000;
   padding: 0.2604166667vw 1.0416666667vw;
-  margin-top: 1.3020833333vw;
   box-sizing: border-box;
 }
 .shapesWrapper .shape button:hover {
@@ -140,6 +144,12 @@ h1 {
 }
 .shapesWrapper .shape.square {
   width: 13.0208333333vw;
+  height: 13.0208333333vw;
+  border: 2px solid #fff;
+  padding: 1.0416666667vw;
+}
+.shapesWrapper .shape.rectangle {
+  width: 9.375vw;
   height: 13.0208333333vw;
   border: 2px solid #fff;
   padding: 1.0416666667vw;

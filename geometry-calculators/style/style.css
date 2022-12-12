@@ -1,0 +1,158 @@
+@import "normalize.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: url("../image/bg.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+body::after {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.7s ease-in-out;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+body.loaded::after {
+  opacity: 1;
+}
+body.loaded h1 {
+  transform: translateX(0);
+}
+
+#main {
+  position: relative;
+  z-index: 10;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 3.6458333333vw;
+  color: #fff;
+  text-align: center;
+  transform: translateX(-9999px);
+  transition: transform 1s ease-in-out;
+}
+
+.shapesWrapper {
+  margin: auto;
+  max-width: 80%;
+  padding: 1.5625vw;
+  border-radius: 1.0416666667vw;
+  border: 2px solid #fff;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.shapesWrapper input {
+  outline: none;
+  border: none;
+}
+.shapesWrapper .shape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.9375vw;
+  text-align: center;
+}
+.shapesWrapper .shape.alreadyCalc {
+  background: #000;
+}
+.shapesWrapper .shape input {
+  width: 60%;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 0.2604166667vw;
+  padding: 0.5208333333vw;
+  background: transparent;
+  color: #fff;
+  margin-bottom: 0.78125vw;
+}
+.shapesWrapper .shape .enterData {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.shapesWrapper .shape .enterData p {
+  font-size: 0.8333333333vw;
+  margin-bottom: 1.0416666667vw;
+}
+.shapesWrapper .shape .result {
+  display: none;
+  flex-direction: column;
+  text-align: left;
+}
+.shapesWrapper .shape .result span {
+  font-size: 0.9895833333vw;
+  margin-left: 0.5208333333vw;
+  font-weight: 600;
+}
+.shapesWrapper .shape .result .reset {
+  margin-top: 0.5208333333vw;
+}
+.shapesWrapper .shape button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: #fff;
+  border-radius: 0.2604166667vw;
+  color: #000;
+  padding: 0.2604166667vw 1.0416666667vw;
+  box-sizing: border-box;
+}
+.shapesWrapper .shape button:hover {
+  background: #000;
+  color: #fff;
+  outline: 1px solid #fff;
+}
+.shapesWrapper .shape:hover {
+  cursor: initial;
+}
+.shapesWrapper .shape:hover .enterData {
+  display: flex;
+}
+.shapesWrapper .shape:hover p.description {
+  display: none;
+}
+.shapesWrapper .shape.alreadyCalc .enterData {
+  display: none;
+}
+.shapesWrapper .shape.alreadyCalc p.description {
+  display: none;
+}
+.shapesWrapper .shape.alreadyCalc .result {
+  display: flex;
+}
+.shapesWrapper .shape.square {
+  width: 13.0208333333vw;
+  height: 13.0208333333vw;
+  border: 2px solid #fff;
+  padding: 1.0416666667vw;
+}
+.shapesWrapper .shape.rectangle {
+  width: 9.375vw;
+  height: 13.0208333333vw;
+  border: 2px solid #fff;
+  padding: 1.0416666667vw;
+}
+
+/*# sourceMappingURL=style.css.map */

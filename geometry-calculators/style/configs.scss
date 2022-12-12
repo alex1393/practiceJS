@@ -1,0 +1,11 @@
+$desktop: 1920;
+$tab: 768;
+$mob: 375;
+
+@function toResponsiveUnits($value, $device){
+  @if $device == $mob{
+    @return $value * 100 / $device + vmin;
+  } @else{
+    @return $value * 100 / $device + vw;
+  }
+}

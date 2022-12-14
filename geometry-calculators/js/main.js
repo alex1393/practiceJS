@@ -25,18 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     const rectangleBtn = document.querySelector('.rectangle .calc');
     const rectangleBtnReset = document.querySelector('.rectangle .reset');
     const rectangleWrap = document.querySelector('.rectangle');
@@ -59,6 +47,56 @@ document.addEventListener('DOMContentLoaded', () => {
         rectangleWrap.classList.remove('alreadyCalc');
         document.querySelector('.rectangle input.sideOne').value = '';
         document.querySelector('.rectangle input.sideTwo').value = '';
+    })
+
+
+
+    const circleBtn = document.querySelector('.circle .calc');
+    const circleBtnReset = document.querySelector('.circle .reset');
+    const circleWrap = document.querySelector('.circle');
+    const circleArea = document.querySelector('.circle .area');
+    const circleCircumference = document.querySelector('.circle .circumference');
+
+    circleBtn.addEventListener('click', ()=>{
+        const circleInput = parseInt(document.querySelector('.circle input').value);
+        if(circleInput > 0){
+            circleWrap.classList.add('alreadyCalc');
+            circleArea.innerHTML = (Math.PI * Math.pow(circleInput, 2)).toFixed(2) + ' cm' + '2'.sup();
+            circleCircumference.innerHTML = (2 * Math.PI * circleInput).toFixed(2) + ' cm';
+        }
+    })
+    circleBtnReset.addEventListener('click', ()=>{
+        circleWrap.classList.remove('alreadyCalc');
+        document.querySelector('.circle input').value = '';
+    })
+
+
+
+
+
+
+    const triangleBtn = document.querySelector('.triangle .calc');
+    const triangleBtnReset = document.querySelector('.triangle .reset');
+    const triangleWrap = document.querySelector('.triangle');
+    const triangleArea = document.querySelector('.triangle .area');
+    const triangleCircumference = document.querySelector('.triangle .circumference');
+
+    triangleBtn.addEventListener('click', ()=>{
+        const triangleInputOne = parseInt(document.querySelector('.triangle .firstSide').value);
+        const triangleInputTwo = parseInt(document.querySelector('.triangle .secondSide').value);
+        const triangleInputThree = parseInt(document.querySelector('.triangle .thirdSide').value);
+        if(triangleInputOne > 0 && triangleInputTwo > 0 && triangleInputThree > 0){
+            triangleWrap.classList.add('alreadyCalc');
+            const halfPerimeter = (triangleInputOne + triangleInputTwo + triangleInputThree) / 2;
+            console.log(halfPerimeter)
+            triangleArea.innerHTML = (Math.sqrt(halfPerimeter * (halfPerimeter - triangleInputOne) * (halfPerimeter - triangleInputTwo) * (halfPerimeter - triangleInputThree))).toFixed(2) + ' cm' + '2'.sup();
+        }
+    })
+    triangleBtnReset.addEventListener('click', ()=>{
+        triangleWrap.classList.remove('alreadyCalc');
+        document.querySelector('.triangle .firstSide').value = '';
+        document.querySelector('.triangle .secondSide').value = '';
+        document.querySelector('.triangle .thirdSide').value = '';
     })
 
 })

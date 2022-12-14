@@ -21,7 +21,6 @@
                 </div>
                 <div class="result">
                     <div>Area: <span class="area"><!----></span></div>
-                    <br>
                     <div>Perimeter: <span class="perimeter"><!----></span></div>
                     <button class="reset">Reset</button>
                 </div>
@@ -36,16 +35,39 @@
                 </div>
                 <div class="result">
                     <div>Area: <span class="area"><!----></span></div>
-                    <br>
                     <div>Perimeter: <span class="perimeter"><!----></span></div>
                     <button class="reset">Reset</button>
                 </div>
             </div>
-            <div class="square shape">
-
+            <div class="circle shape">
+                <p class="description">Find the area of a circle and the circumference of a circle.</p>
+                <div class="enterData">
+                    <p>Please enter radius</p>
+                    <input type="number">
+                    <button class="calc">Calc</button>
+                </div>
+                <div class="result">
+                    <div>Area: <span class="area"><!----></span></div>
+                    <div>Circumference: <span class="circumference"><!----></span></div>
+                    <button class="reset">Reset</button>
+                </div>
             </div>
-            <div class="square shape">
-
+            <div class="triangle shape">
+                <svg viewBox="0 0 100 100">
+                    <polygon points="0 0, 100 80, 0 90" class="trianglePic" />
+                </svg>
+                <p class="description">Find the area of a triangle.</p>
+                <div class="enterData">
+                    <p>Please enter sides length</p>
+                    <input type="number" placeholder="First side" class="firstSide">
+                    <input type="number" placeholder="Second side" class="secondSide">
+                    <input type="number" placeholder="Third side" class="thirdSide">
+                    <button class="calc">Calc</button>
+                </div>
+                <div class="result">
+                    <div>Area: <span class="area"><!----></span></div>
+                    <button class="reset">Reset</button>
+                </div>
             </div>
         </div>
     </div>

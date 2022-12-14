@@ -73,9 +73,6 @@ h1 {
   font-size: 0.9375vw;
   text-align: center;
 }
-.shapesWrapper .shape.alreadyCalc {
-  background: #000;
-}
 .shapesWrapper .shape input {
   width: 60%;
   text-align: center;
@@ -103,11 +100,12 @@ h1 {
 }
 .shapesWrapper .shape .result span {
   font-size: 0.9895833333vw;
-  margin-left: 0.5208333333vw;
   font-weight: 600;
+  white-space: nowrap;
 }
 .shapesWrapper .shape .result .reset {
-  margin-top: 0.5208333333vw;
+  margin: 0.5208333333vw auto 0 auto;
+  width: 5.2083333333vw;
 }
 .shapesWrapper .shape button {
   cursor: pointer;
@@ -153,6 +151,58 @@ h1 {
   height: 13.0208333333vw;
   border: 2px solid #fff;
   padding: 1.0416666667vw;
+}
+.shapesWrapper .shape.circle {
+  width: 13.0208333333vw;
+  height: 13.0208333333vw;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  padding: 1.0416666667vw;
+}
+.shapesWrapper .shape.triangle {
+  width: 18.2291666667vw;
+  margin-top: 1.5625vw;
+}
+.shapesWrapper .shape.triangle svg {
+  position: absolute;
+  z-index: 10;
+  width: 18.2291666667vw;
+  pointer-events: none;
+}
+.shapesWrapper .shape.triangle .trianglePic {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 0.6;
+}
+.shapesWrapper .shape.triangle .description, .shapesWrapper .shape.triangle .enterData, .shapesWrapper .shape.triangle .result {
+  width: 50%;
+  text-align: center;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: 0.15625vw;
+  margin-top: 0.5208333333vw;
+}
+.shapesWrapper .shape.triangle .enterData p {
+  width: 30%;
+  text-align: left;
+  align-self: flex-start;
+  padding-left: 0.2604166667vw;
+}
+.shapesWrapper .shape.triangle .enterData input {
+  padding: 2px 0;
+  align-self: flex-start;
+  margin-left: 1.0416666667vw;
+}
+.shapesWrapper .shape.triangle .enterData input::placeholder {
+  text-align: left;
+  font-size: 0.625vw;
+  padding-left: 0.2604166667vw;
+  padding-bottom: 0.2604166667vw;
+}
+.shapesWrapper .shape.triangle .enterData .calc {
+  position: relative;
+  top: -2.34375vw;
+  left: 5.7291666667vw;
 }
 
 /*# sourceMappingURL=style.css.map */

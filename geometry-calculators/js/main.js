@@ -72,20 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-
-    const resetBtns = document.querySelectorAll('.shape .reset');
+    const resetBtns = document.querySelectorAll('.reset');
     resetBtns.forEach(el => {
         el.addEventListener('click', () => {
-            resetShape(el);
+            const shapeWrap = el.closest('.shape');
+            shapeWrap.classList.remove('alreadyCalc');
+            const inputs = shapeWrap.querySelectorAll('input');
+            inputs.forEach(item => item.value = '')
         })
     })
-    function resetShape(closeBtn){
-        const shapeElement = closeBtn.closest('.shape');
-        shapeElement.classList.remove('alreadyCalc');
-        const inputs = shapeElement.querySelectorAll('input');
-        inputs.forEach(item => {
-            item.value = '';
-        })
-    }
 
 })

@@ -1,10 +1,5 @@
-@import "normalize.min.css";
+@import "normalize.min";
 @import "configs";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap');
-
-*{
-  font-family: 'Montserrat', sans-serif;
-}
 
 html, body{
   height: 100%;
@@ -12,6 +7,7 @@ html, body{
 }
 
 body{
+  font-family: 'Montserrat', sans-serif;
   background: url("../image/bg.jpg") center no-repeat;
   background-size: cover;
   position: relative;
@@ -26,13 +22,13 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0, 0.7);
+    background: rgba($secondColor, 0.7);
   }
   &.loaded{
     &::after{
       opacity: 1;
     }
-    h1{
+    .mainTitle{
       transform: translateX(0);
     }
   }
@@ -41,49 +37,53 @@ body{
 #main{
   position: relative;
   z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-h1{
+.mainTitle{
   font-weight: 600;
   font-size: toResponsiveUnits(70, $desktop);
-  color: #fff;
+  color: $accentColor;
   text-align: center;
   transform: translateX(-9999px);
   transition: transform 1s ease-in-out;
 }
 
 .shapesWrapper{
-  margin: auto;
-  max-width: 80%;
-  padding: toResponsiveUnits(30, $desktop);
+  width: 80%;
+  height: toResponsiveUnits(400, $desktop);;
+  padding: 0 toResponsiveUnits(30, $desktop);
   border-radius: toResponsiveUnits(20, $desktop);
-  border: 2px solid #fff;
-  background: rgba(0,0,0,0.6);
+  border: 2px solid $accentColor;
+  background: rgba($secondColor, 0.6);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  input{
-    outline: none;
-    border: none;
-  }
   .shape{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
+    color: $accentColor;
     font-weight: 500;
     font-size: toResponsiveUnits(18, $desktop);
     text-align: center;
+    border: 2px solid $accentColor;
+    padding: toResponsiveUnits(20, $desktop);
     input{
       width: 60%;
       text-align: center;
-      border: 1px solid #fff;
+      border: 1px solid $accentColor;
       border-radius: toResponsiveUnits(5, $desktop);
       padding: toResponsiveUnits(10, $desktop);
       background: transparent;
-      color: #fff;
+      color: $accentColor;
       margin-bottom: toResponsiveUnits(15, $desktop);
+      outline: none;
     }
     .enterData{
       display: none;
@@ -113,15 +113,15 @@ h1{
       cursor: pointer;
       outline: none;
       border: none;
-      background: #fff;
+      background: $accentColor;
       border-radius: toResponsiveUnits(5, $desktop);
-      color: #000;
+      color: $secondColor;
       padding: toResponsiveUnits(5, $desktop) toResponsiveUnits(20, $desktop);
       box-sizing: border-box;
       &:hover{
-        background: #000;
-        color: #fff;
-        outline: 1px solid #fff;
+        background: $secondColor;
+        color: $accentColor;
+        outline: 1px solid $accentColor;
       }
     }
     &:hover{
@@ -147,43 +147,44 @@ h1{
     &.square{
       width: toResponsiveUnits(250, $desktop);
       height: toResponsiveUnits(250, $desktop);
-      border: 2px solid #fff;
-      padding: toResponsiveUnits(20, $desktop);
     }
     &.rectangle{
       width: toResponsiveUnits(180, $desktop);
       height: toResponsiveUnits(250, $desktop);
-      border: 2px solid #fff;
-      padding: toResponsiveUnits(20, $desktop);
     }
     &.circle{
       width: toResponsiveUnits(250, $desktop);
       height: toResponsiveUnits(250, $desktop);
       border-radius: 50%;
-      border: 2px solid #fff;
-      padding: toResponsiveUnits(20, $desktop);
     }
     &.triangle{
       width: toResponsiveUnits(350, $desktop);
       margin-top: toResponsiveUnits(30, $desktop);
+      border: none;
+      padding: 0;
+      &:hover{
+        svg{
+          pointer-events: none;
+        }
+      }
       svg{
         position: absolute;
         z-index: 10;
         width: toResponsiveUnits(350, $desktop);
-        pointer-events: none;
       }
       .trianglePic{
         fill: transparent;
-        stroke: white;
+        stroke: $accentColor;
         stroke-width: 0.6;
       }
       .description, .enterData, .result{
         width: 50%;
         text-align: center;
-        margin-right: auto;
-        margin-bottom: auto;
-        margin-left: toResponsiveUnits(3, $desktop);
-        margin-top: toResponsiveUnits(10, $desktop);
+        margin: toResponsiveUnits(10, $desktop) auto auto toResponsiveUnits(3, $desktop);
+      }
+      .result{
+        margin-left: toResponsiveUnits(20, $desktop);
+        margin-top: toResponsiveUnits(100, $desktop);
       }
       .enterData{
         p{
@@ -193,9 +194,10 @@ h1{
           padding-left: toResponsiveUnits(5, $desktop);
         }
         input{
-          padding: 2px 0;
+          padding: toResponsiveUnits(8, $desktop) 0;
           align-self: flex-start;
           margin-left: toResponsiveUnits(20, $desktop);
+          font-size: toResponsiveUnits(12, $desktop);
           &::placeholder{
             text-align: left;
             font-size: toResponsiveUnits(12, $desktop);

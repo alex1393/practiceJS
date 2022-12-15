@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if(triangleInputOne > 0 && triangleInputTwo > 0 && triangleInputThree > 0){
             triangleWrap.classList.add('alreadyCalc');
             const halfPerimeter = (triangleInputOne + triangleInputTwo + triangleInputThree) / 2;
-            console.log(halfPerimeter)
             triangleArea.innerHTML = (Math.sqrt(halfPerimeter * (halfPerimeter - triangleInputOne) * (halfPerimeter - triangleInputTwo) * (halfPerimeter - triangleInputThree))).toFixed(2) + ' cm' + '2'.sup();
+            console.log((Math.sqrt(halfPerimeter * (halfPerimeter - triangleInputOne) * (halfPerimeter - triangleInputTwo) * (halfPerimeter - triangleInputThree))).toFixed(2));
         }
     })
     triangleBtnReset.addEventListener('click', ()=>{

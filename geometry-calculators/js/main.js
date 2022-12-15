@@ -5,7 +5,6 @@ window.addEventListener('load', () => {
 document.addEventListener('DOMContentLoaded', () => {
 
     const squareBtn = document.querySelector('.square .calc');
-    const squareBtnReset = document.querySelector('.square .reset');
     const squareWrap = document.querySelector('.square');
     const squareArea = document.querySelector('.square .area');
     const squarePerimeter = document.querySelector('.square .perimeter');
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     const rectangleBtn = document.querySelector('.rectangle .calc');
-    const rectangleBtnReset = document.querySelector('.rectangle .reset');
     const rectangleWrap = document.querySelector('.rectangle');
     const rectangleArea = document.querySelector('.rectangle .area');
     const rectanglePerimeter = document.querySelector('.rectangle .perimeter');
@@ -29,9 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const rectangleInputOne = parseInt(document.querySelector('.rectangle input.sideOne').value);
         const rectangleInputTwo = parseInt(document.querySelector('.rectangle input.sideTwo').value);
 
-
-
-        if(rectangleInputOne > 0 && rectangleInputTwo > 0 && rectangleInputTwo != rectangleInputOne){
+        if(rectangleInputOne > 0 && rectangleInputTwo > 0 && rectangleInputTwo !== rectangleInputOne){
             rectangleWrap.classList.add('alreadyCalc');
             rectangleArea.innerHTML = rectangleInputOne * rectangleInputTwo + ' cm' + '2'.sup();
             rectanglePerimeter.innerHTML = (rectangleInputOne + rectangleInputTwo) * 2 + ' cm';
@@ -40,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const circleBtn = document.querySelector('.circle .calc');
-    const circleBtnReset = document.querySelector('.circle .reset');
     const circleWrap = document.querySelector('.circle');
     const circleArea = document.querySelector('.circle .area');
     const circleCircumference = document.querySelector('.circle .circumference');
@@ -55,10 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     const triangleBtn = document.querySelector('.triangle .calc');
-    const triangleBtnReset = document.querySelector('.triangle .reset');
     const triangleWrap = document.querySelector('.triangle');
     const triangleArea = document.querySelector('.triangle .area');
-    const triangleCircumference = document.querySelector('.triangle .circumference');
 
     triangleBtn.addEventListener('click', ()=>{
         const triangleInputOne = parseInt(document.querySelector('.triangle .firstSide').value);

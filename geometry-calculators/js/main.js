@@ -18,12 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
             squarePerimeter.innerHTML = squareInput * 4 + ' cm';
         }
     })
-    squareBtnReset.addEventListener('click', ()=>{
-        squareWrap.classList.remove('alreadyCalc');
-        document.querySelector('.square input').value = '';
-    })
-
-
 
     const rectangleBtn = document.querySelector('.rectangle .calc');
     const rectangleBtnReset = document.querySelector('.rectangle .reset');
@@ -43,12 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
             rectanglePerimeter.innerHTML = (rectangleInputOne + rectangleInputTwo) * 2 + ' cm';
         }
     })
-    rectangleBtnReset.addEventListener('click', ()=>{
-        rectangleWrap.classList.remove('alreadyCalc');
-        document.querySelector('.rectangle input.sideOne').value = '';
-        document.querySelector('.rectangle input.sideTwo').value = '';
-    })
-
 
 
     const circleBtn = document.querySelector('.circle .calc');
@@ -65,15 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
             circleCircumference.innerHTML = (2 * Math.PI * circleInput).toFixed(2) + ' cm';
         }
     })
-    circleBtnReset.addEventListener('click', ()=>{
-        circleWrap.classList.remove('alreadyCalc');
-        document.querySelector('.circle input').value = '';
-    })
-
-
-
-
-
 
     const triangleBtn = document.querySelector('.triangle .calc');
     const triangleBtnReset = document.querySelector('.triangle .reset');
@@ -92,11 +71,21 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log((Math.sqrt(halfPerimeter * (halfPerimeter - triangleInputOne) * (halfPerimeter - triangleInputTwo) * (halfPerimeter - triangleInputThree))).toFixed(2));
         }
     })
-    triangleBtnReset.addEventListener('click', ()=>{
-        triangleWrap.classList.remove('alreadyCalc');
-        document.querySelector('.triangle .firstSide').value = '';
-        document.querySelector('.triangle .secondSide').value = '';
-        document.querySelector('.triangle .thirdSide').value = '';
+
+
+    const resetBtns = document.querySelectorAll('.shape .reset');
+    resetBtns.forEach(el => {
+        el.addEventListener('click', () => {
+            resetShape(el);
+        })
     })
+    function resetShape(closeBtn){
+        const shapeElement = closeBtn.closest('.shape');
+        shapeElement.classList.remove('alreadyCalc');
+        const inputs = shapeElement.querySelectorAll('input');
+        inputs.forEach(item => {
+            item.value = '';
+        })
+    }
 
 })

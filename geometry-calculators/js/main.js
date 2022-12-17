@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shapeWrap.classList.add('alreadyCalc');
             squareArea.innerHTML = squareInput * squareInput + ' cm' + '2'.sup();
             squarePerimeter.innerHTML = squareInput * 4 + ' cm';
+            hideEnterData(shapeWrap);
         }
     }
 
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shapeWrap.classList.add('alreadyCalc');
             rectangleArea.innerHTML = rectangleInputOne * rectangleInputTwo + ' cm' + '2'.sup();
             rectanglePerimeter.innerHTML = (rectangleInputOne + rectangleInputTwo) * 2 + ' cm';
+            hideEnterData(shapeWrap);
         }
     }
 
@@ -36,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shapeWrap.classList.add('alreadyCalc');
             circleArea.innerHTML = (Math.PI * Math.pow(circleInput, 2)).toFixed(2) + ' cm' + '2'.sup();
             circleCircumference.innerHTML = (2 * Math.PI * circleInput).toFixed(2) + ' cm';
+            hideEnterData(shapeWrap);
         }
     }
 
@@ -48,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shapeWrap.classList.add('alreadyCalc');
             const halfPerimeter = (triangleInputOne + triangleInputTwo + triangleInputThree) / 2;
             triangleArea.innerHTML = (Math.sqrt(halfPerimeter * (halfPerimeter - triangleInputOne) * (halfPerimeter - triangleInputTwo) * (halfPerimeter - triangleInputThree))).toFixed(2) + ' cm' + '2'.sup();
+            hideEnterData(shapeWrap);
         }
     }
 
@@ -79,7 +83,44 @@ document.addEventListener('DOMContentLoaded', () => {
             const shapeWrap = el.closest('.shape');
             shapeWrap.classList.remove('alreadyCalc');
             const inputs = shapeWrap.querySelectorAll('input');
-            inputs.forEach(item => item.value = '')
+            inputs.forEach(item => item.value = '');
+            showEnterData(shapeWrap);
         })
     })
+
+
+
+    const allShapesWrapper = document.querySelectorAll('.shape');
+    allShapesWrapper.forEach(shape => {
+        shape.onmouseover = function(event) {
+            if(!shape.classList.contains('alreadyCalc')){
+                event.stopPropagation();
+                showEnterData(shape);
+            }
+        };
+        shape.onmouseout = function(event) {
+            event.stopPropagation();
+            let inputsValue = '';
+            const allShapeInputs =  shape.querySelectorAll('input');
+            allShapeInputs.forEach( input => {
+                inputsValue = inputsValue + input.value;
+            })
+            if(inputsValue.length === 0){
+                hideEnterData(shape);
+                hideDescription(shape);
+            }
+        };
+    })
+
+    function showEnterData(shape){
+        shape.querySelector('.enterData').style.display = 'flex';
+        shape.querySelector('p.description').style.display = 'none';
+    }
+    function hideEnterData(shape){
+        shape.querySelector('.enterData').style.display = 'none';
+    }
+    function hideDescription(shape){
+        shape.querySelector('p.description').style.display = 'block';
+    }
+
 })

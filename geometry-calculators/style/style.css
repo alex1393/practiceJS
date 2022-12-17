@@ -273,15 +273,6 @@ body.loaded .mainTitle {
   color: #ffffff;
   outline: 1px solid #ffffff;
 }
-.shapesWrapper .shape:hover {
-  cursor: initial;
-}
-.shapesWrapper .shape:hover .enterData {
-  display: flex;
-}
-.shapesWrapper .shape:hover p.description {
-  display: none;
-}
 .shapesWrapper .shape.alreadyCalc .enterData {
   display: none;
 }

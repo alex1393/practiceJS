@@ -125,13 +125,13 @@ body{
       }
     }
     &:hover{
-      cursor: initial;
-      .enterData{
-        display: flex;
-      }
-      p.description{
-        display: none;
-      }
+      //cursor: initial;
+      //.enterData{
+      //  display: flex;
+      //}
+      //p.description{
+      //  display: none;
+      //}
     }
     &.alreadyCalc{
       .enterData{

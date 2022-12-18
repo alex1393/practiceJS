@@ -124,15 +124,6 @@ body{
         outline: 1px solid $accentColor;
       }
     }
-    &:hover{
-      //cursor: initial;
-      //.enterData{
-      //  display: flex;
-      //}
-      //p.description{
-      //  display: none;
-      //}
-    }
     &.alreadyCalc{
       .enterData{
         display: none;
@@ -209,6 +200,91 @@ body{
           position: relative;
           top: toResponsiveUnits(-45, $desktop);
           left: toResponsiveUnits(110, $desktop);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) and (orientation: portrait), (max-width: 1023px) {
+  .mainTitle{
+    font-size: toResponsiveUnits(70, $tab);
+  }
+  .shapesWrapper{
+    height: auto;
+    padding: toResponsiveUnits(30, $tab);
+    border-radius: toResponsiveUnits(20, $tab);
+    .shape{
+      font-size: toResponsiveUnits(18, $tab);
+      padding: toResponsiveUnits(20, $tab);
+      input{
+        border-radius: toResponsiveUnits(5, $tab);
+        padding: toResponsiveUnits(10, $tab);
+        margin-bottom: toResponsiveUnits(15, $tab);
+      }
+      .enterData{
+        p{
+          font-size: toResponsiveUnits(16, $tab);
+          margin-bottom: toResponsiveUnits(20, $tab);
+        }
+      }
+      .result{
+        span{
+          font-size: toResponsiveUnits(19, $tab);
+        }
+        .reset{
+          margin: toResponsiveUnits(10, $tab) auto 0 auto;
+          width: toResponsiveUnits(100, $tab);
+        }
+      }
+      button{
+        border-radius: toResponsiveUnits(5, $tab);
+        padding: toResponsiveUnits(5, $tab) toResponsiveUnits(20, $tab);
+      }
+      &.square{
+        width: toResponsiveUnits(250, $tab);
+        height: toResponsiveUnits(250, $tab);
+      }
+      &.rectangle{
+        width: toResponsiveUnits(180, $tab);
+        height: toResponsiveUnits(250, $tab);
+      }
+      &.circle{
+        width: toResponsiveUnits(250, $tab);
+        height: toResponsiveUnits(250, $tab);
+        margin-top: toResponsiveUnits(30, $tab);
+      }
+      &.triangle{
+        width: toResponsiveUnits(285, $tab);
+        margin-top: toResponsiveUnits(30, $tab);
+        svg{
+          width: toResponsiveUnits(305, $tab);
+        }
+        .description, .enterData, .result{
+          margin: toResponsiveUnits(10, $tab) auto auto toResponsiveUnits(3, $tab);
+        }
+        .result{
+          margin-left: toResponsiveUnits(20, $tab);
+          margin-top: toResponsiveUnits(100, $tab);
+        }
+        .enterData{
+          p{
+            padding-left: toResponsiveUnits(5, $tab);
+          }
+          input{
+            padding: toResponsiveUnits(8, $tab) 0;
+            margin-left: toResponsiveUnits(20, $tab);
+            font-size: toResponsiveUnits(12, $tab);
+            &::placeholder{
+              font-size: toResponsiveUnits(12, $tab);
+              padding-left: toResponsiveUnits(5, $tab);
+              padding-bottom: toResponsiveUnits(5, $tab);
+            }
+          }
+          .calc{
+            top: toResponsiveUnits(-45, $tab);
+            left: toResponsiveUnits(110, $tab);
+          }
         }
       }
     }

@@ -108,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
     })
-
     function showEnterData(shape){
         shape.querySelector('.enterData').style.display = 'flex';
         hideDescription(shape);

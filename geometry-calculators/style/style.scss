@@ -220,12 +220,12 @@ body{
       input{
         border-radius: toResponsiveUnits(5, $tab);
         padding: toResponsiveUnits(10, $tab);
-        margin-bottom: toResponsiveUnits(15, $tab);
+        margin-bottom: toResponsiveUnits(7, $tab);
       }
       .enterData{
         p{
-          font-size: toResponsiveUnits(16, $tab);
-          margin-bottom: toResponsiveUnits(20, $tab);
+          font-size: toResponsiveUnits(12, $tab);
+          margin-bottom: toResponsiveUnits(10, $tab);
         }
       }
       .result{
@@ -261,7 +261,7 @@ body{
           width: toResponsiveUnits(305, $tab);
         }
         .description, .enterData, .result{
-          margin: toResponsiveUnits(10, $tab) auto auto toResponsiveUnits(3, $tab);
+          margin: toResponsiveUnits(35, $tab) auto auto toResponsiveUnits(3, $tab);
         }
         .result{
           margin-left: toResponsiveUnits(20, $tab);
@@ -269,12 +269,12 @@ body{
         }
         .enterData{
           p{
-            padding-left: toResponsiveUnits(5, $tab);
+            padding-left: 0;
           }
           input{
-            padding: toResponsiveUnits(8, $tab) 0;
-            margin-left: toResponsiveUnits(20, $tab);
-            font-size: toResponsiveUnits(12, $tab);
+            padding: toResponsiveUnits(4, $tab) 0;
+            margin-left: toResponsiveUnits(10, $tab);
+            font-size: toResponsiveUnits(10, $tab);
             &::placeholder{
               font-size: toResponsiveUnits(12, $tab);
               padding-left: toResponsiveUnits(5, $tab);
@@ -282,8 +282,9 @@ body{
             }
           }
           .calc{
-            top: toResponsiveUnits(-45, $tab);
-            left: toResponsiveUnits(110, $tab);
+            top: toResponsiveUnits(-47, $tab);
+            left: toResponsiveUnits(85, $tab);
+            font-size: toResponsiveUnits(14, $tab);
           }
         }
       }

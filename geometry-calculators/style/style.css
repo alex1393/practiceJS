@@ -363,11 +363,11 @@ body.loaded .mainTitle {
   .shapesWrapper .shape input {
     border-radius: 0.6510416667vw;
     padding: 1.3020833333vw;
-    margin-bottom: 1.953125vw;
+    margin-bottom: 0.9114583333vw;
   }
   .shapesWrapper .shape .enterData p {
-    font-size: 2.0833333333vw;
-    margin-bottom: 2.6041666667vw;
+    font-size: 1.5625vw;
+    margin-bottom: 1.3020833333vw;
   }
   .shapesWrapper .shape .result span {
     font-size: 2.4739583333vw;
@@ -401,19 +401,19 @@ body.loaded .mainTitle {
     width: 39.7135416667vw;
   }
   .shapesWrapper .shape.triangle .description, .shapesWrapper .shape.triangle .enterData, .shapesWrapper .shape.triangle .result {
-    margin: 1.3020833333vw auto auto 0.390625vw;
+    margin: 4.5572916667vw auto auto 0.390625vw;
   }
   .shapesWrapper .shape.triangle .result {
     margin-left: 2.6041666667vw;
     margin-top: 13.0208333333vw;
   }
   .shapesWrapper .shape.triangle .enterData p {
-    padding-left: 0.6510416667vw;
+    padding-left: 0;
   }
   .shapesWrapper .shape.triangle .enterData input {
-    padding: 1.0416666667vw 0;
-    margin-left: 2.6041666667vw;
-    font-size: 1.5625vw;
+    padding: 0.5208333333vw 0;
+    margin-left: 1.3020833333vw;
+    font-size: 1.3020833333vw;
   }
   .shapesWrapper .shape.triangle .enterData input::placeholder {
     font-size: 1.5625vw;
@@ -421,8 +421,9 @@ body.loaded .mainTitle {
     padding-bottom: 0.6510416667vw;
   }
   .shapesWrapper .shape.triangle .enterData .calc {
-    top: -5.859375vw;
-    left: 14.3229166667vw;
+    top: -6.1197916667vw;
+    left: 11.0677083333vw;
+    font-size: 1.8229166667vw;
   }
 }
 

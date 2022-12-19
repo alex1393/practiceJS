@@ -426,5 +426,14 @@ body.loaded .mainTitle {
     font-size: 1.8229166667vw;
   }
 }
+@media (max-width: 1024px) and (orientation: landscape) and (max-height: 540px) {
+  html, body {
+    height: initial;
+    overflow: initial;
+  }
+  #main {
+    padding: 8vmin 0;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

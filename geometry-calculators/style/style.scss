@@ -291,3 +291,13 @@ body{
     }
   }
 }
+
+@media (max-width: 1024px) and (orientation: landscape) and (max-height: 540px) {
+    html, body{
+      height: initial;
+      overflow: initial;
+    }
+  #main{
+    padding: toResponsiveUnits(30, $mob) 0;
+  }
+}
